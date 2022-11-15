@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from './components/Layout/Header/Header';
 
 const App = () => {
    return (
-      <div>
-         Initial Commit
-      </div>
+      <>
+         <Header />
+      </>
    );
 };
 
