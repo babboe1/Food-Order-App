@@ -17,13 +17,18 @@ export const Backdrop = (props) => {
 const Modal = (props) => {
    return (
       <>
-         <Backdrop />
-         <ModalOverlay>{props.children}</ModalOverlay>
+         {ReactDOM.createPortal(
+            <Backdrop />,
+            document.getElementById('body-root'),
+         )}
+         {ReactDOM.createPortal(
+            <ModalOverlay>{props.children}</ModalOverlay>,
+            document.getElementById('body-root'),
+         )}
       </>
    );
 };
 
-
-ReactDOM.createPortal()
+ReactDOM.createPortal();
 
 export default Modal;
