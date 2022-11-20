@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import classes from './Cart.module.css';
+import classes from './Modal.module.css';
 
 const ModalOverlay = (props) => {
    return (
-      <div className={classes.backdrop}>
+      <div className={classes.modal}>
          <div className={classes.content}>{props.children}</div>
       </div>
    );
@@ -28,7 +28,5 @@ const Modal = (props) => {
       </>
    );
 };
-
-ReactDOM.createPortal();
 
 export default Modal;
