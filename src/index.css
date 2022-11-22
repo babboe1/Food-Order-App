@@ -13,3 +13,8 @@ body {
   background-color: #3f3f3f;
 }
 
+.Stop-Scroll {
+   overflow: hidden;
+   height: 100vh;
+}
+
