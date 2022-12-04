@@ -3,14 +3,14 @@ import CartContext from '../../../Store/CartContext/CartContext';
 import MealItemForm from '../MealItemForm/MealItemForm';
 import classes from './MealItem.module.css';
 
-const MealItem = ( props ) => {
-   const cartCtx = useContext( CartContext );
-   const addItemToCartHandler = ( amount ) => { 
+const MealItem = (props) => {
+   const cartCtx = useContext(CartContext);
+   const addItemToCartHandler = (amount) => {
       cartCtx.addItem({
          id: props.id,
          name: props.name,
          amount: amount,
-         price: props.price
+         price: props.price,
       });
    };
    return (
@@ -21,7 +21,11 @@ const MealItem = ( props ) => {
             <div className={classes.price}>{`$${props.price.toFixed(2)}`}</div>
          </div>
          <div>
-            <MealItemForm cartItems={cartCtx.items} id={props.id} onAddToCart={ addItemToCartHandler} />
+            <MealItemForm
+               cartItems={cartCtx.items}
+               id={props.id}
+               onAddToCart={addItemToCartHandler}
+            />
          </div>
       </li>
    );
