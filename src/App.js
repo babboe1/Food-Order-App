@@ -8,6 +8,14 @@ import CartProvider from './Store/CartContext/CartProvider';
 const App = () => {
    const body = document.getElementById('body-root');
    const [showModal, setShowModal] = useState(false);
+   const [ showOrder, setShowOrder ] = useState( false );
+   const defaultFormState = {
+      name: '',
+      street: '',
+      postal: '',
+      city: '',
+   };
+   const [formState, setFormState] = useState(defaultFormState);
    const showModalHandler = () => {
       setShowModal( true );
       body.classList.add('Stop-Scroll');
