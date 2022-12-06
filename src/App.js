@@ -25,6 +25,12 @@ const App = () => {
       body.classList.remove('Stop-Scroll');
    };
 
+   const sendFormData = ( data ) => {
+      setFormState( data );
+      console.log( formState );
+      return 
+   }
+
    const value = {
       showModal,
       showModalHandler,
