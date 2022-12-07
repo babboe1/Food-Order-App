@@ -35,6 +35,9 @@ const App = () => {
       showModal,
       showModalHandler,
       hideModalHandler,
+      showOrder,
+      setShowOrder,
+      sendFormData,
    };
 
    return (
