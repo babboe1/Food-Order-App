@@ -3,14 +3,14 @@ import classes from './Header.module.css'
 import mealsImage from '../../../assets/images/meals.jpg';
 import HeaderCartBtn from './HeaderCartBtn/HeaderCartBtn';
 
-const Header = () => {
+const Header = (props) => {
    return (
       <>
-         <header className={classes["header"]}>
+         <header className={classes['header']}>
             <h1>ReactMeals</h1>
-            <HeaderCartBtn />
+            <HeaderCartBtn click={props.onShowCart} />
          </header>
-         <div className={ classes[ "main-image" ] }>
+         <div className={classes['main-image']}>
             <img src={mealsImage} alt="A Table Full Of Delicious Meals" />
          </div>
       </>
