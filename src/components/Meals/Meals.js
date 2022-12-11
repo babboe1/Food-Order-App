@@ -11,4 +11,4 @@ const Meals = () => {
    );
 };
 
-export default Meals;
+export default React.memo(Meals);
