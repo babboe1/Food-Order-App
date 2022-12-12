@@ -7,3 +7,8 @@ test('renders app', () => {
    const titleElement = screen.getByText(/ReactMeals/i);
    expect(titleElement).toBeInTheDocument();
 });
+test('renders available meal', () => {
+   render(<AvailableMeals />);
+   const availableMeals = <AvailableMeals />;
+   expect(availableMeals).toHaveProperty('type.name', 'AvailableMeals');
+});
