@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import CartContext from '../../Store/CartContext/CartContext';
 import Context from '../../Store/ContextApi/Context';
 import Modal from '../UI/Modal/Modal';
