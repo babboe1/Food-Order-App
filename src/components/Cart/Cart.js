@@ -6,6 +6,10 @@ import classes from './Cart.module.css';
 import CartItem from './CartItem/CartItem';
 
 const Cart = () => {
+   const [isLoading, setIsLoading] = useState(true);
+   const [placeOrder, setPlaceOrder] = useState(false);
+   const [error, setError] = useState(false);
+
    const context = useContext(Context);
    const cartContext = useContext(CartContext);
    const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
