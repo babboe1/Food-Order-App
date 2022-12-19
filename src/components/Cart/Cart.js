@@ -34,6 +34,33 @@ const Cart = () => {
       </ul>
    );
 
+   const placeOrderHandler = () => {
+      context.setShowOrder(true);
+   };
+
+   const submitOrderHandler = (data) => {
+      // context.hideModalHandler();
+      setPlaceOrder(true);
+      fetch(
+         'https://food-order-app-77b77-default-rtdb.firebaseio.com/orders.json',
+         {
+            method: 'POST',
+            body: JSON.stringify({
+               user: data,
+               orderedItems: cartContext.items,
+            }),
+         },
+      )
+         .then((res) => {
+            setIsLoading(false);
+            return res.json();
+         })
+         .catch((err) => {
+            console.log(err);
+            setError(true);
+         });
+   };
+
    return (
       <Modal>
          {cartItems}
