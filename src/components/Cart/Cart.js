@@ -63,6 +63,25 @@ const Cart = () => {
 
    return (
       <Modal>
+         {placeOrder ? (
+            isLoading ? (
+               <Spinner />
+            ) : error ? (
+               <p className={classes.error}> Unable to create order</p>
+            ) : (
+               <>
+                  <p className={classes.success}>Order Placed Successfully</p>
+                  <button
+                     className={classes['button--cl']}
+                     onClick={context.hideModalHandler}
+                  >
+                     Close
+                  </button>
+               </>
+            )
+         ) : (
+            <>
+               <>
          {cartItems}
          <div className={classes.total}>
             <span>Total Amount</span>
