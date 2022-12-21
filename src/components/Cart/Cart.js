@@ -95,8 +95,19 @@ const Cart = () => {
                {' '}
                Close
             </button>
-            {hasItems && <button className={classes['button']}>Order</button>}
-         </div>
+                           <>
+                              {hasItems && (
+                                 <button
+                                    className={classes['button']}
+                                    onClick={placeOrderHandler}
+                                 >
+                                    Order
+                                 </button>
+                              )}
+                           </>
+                        </>
+                     )}
+                  </div>
       </Modal>
    );
 };
