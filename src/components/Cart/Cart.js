@@ -108,6 +108,15 @@ const Cart = () => {
                         </>
                      )}
                   </div>
+               </>
+               {context.showOrder && (
+                  <Checkout
+                     onCancel={context.hideModalHandler}
+                     onConfirm={submitOrderHandler}
+                  />
+               )}
+            </>
+         )}
       </Modal>
    );
 };
