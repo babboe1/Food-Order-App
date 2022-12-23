@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import CartContext from '../../Store/CartContext/CartContext';
 import Context from '../../Store/ContextApi/Context';
 import Modal from '../UI/Modal/Modal';
+import Spinner from '../UI/Spinner/Spinner';
 import classes from './Cart.module.css';
 import CartItem from './CartItem/CartItem';
+import Checkout from './Checkout/Checkout';
 
 const Cart = () => {
    const [isLoading, setIsLoading] = useState(true);
@@ -82,19 +84,20 @@ const Cart = () => {
          ) : (
             <>
                <>
-         {cartItems}
-         <div className={classes.total}>
-            <span>Total Amount</span>
-            <span>{totalAmount}</span>
-         </div>
-         <div className={classes.actions}>
-            <button
-               className={classes['button--alt']}
-               onClick={context.hideModalHandler}
-            >
-               {' '}
-               Close
-            </button>
+                  {cartItems}
+                  <div className={classes.total}>
+                     <span>Total Amount</span>
+                     <span>{totalAmount}</span>
+                  </div>
+                  <div className={classes.actions}>
+                     {!context.showOrder && (
+                        <>
+                           <button
+                              className={classes['button--alt']}
+                              onClick={context.hideModalHandler}
+                           >
+                              Close
+                           </button>
                            <>
                               {hasItems && (
                                  <button
