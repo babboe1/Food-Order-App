@@ -30,11 +30,11 @@ const DUMMY_MEALS = [
    },
 ];
 
-const AvailableMeals = () => {
-   const mealsList = DUMMY_MEALS.map((meal, idx) => (
-      <MealItem
-         name={meal.name}
-         title={meal.description}
+   const mealsList = state.meals ? (
+      state.meals.map((meal, idx) => (
+         <MealItem
+            name={meal.name}
+            title={meal.description}
          price={ meal.price }
          key={meal.id}
          id={meal.id}
