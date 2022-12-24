@@ -43,9 +43,7 @@ const AvailableMeals = () => {
 
    return (
       <section className={classes.meals}>
-         <Card>
-            <ul>{mealsList}</ul>
-         </Card>
+         <Card>{state.error ? state.errorMsg : <ul>{mealsList}</ul>}</Card>
       </section>
    );
 };
