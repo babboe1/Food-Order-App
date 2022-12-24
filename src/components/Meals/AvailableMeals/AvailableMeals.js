@@ -35,10 +35,10 @@ const DUMMY_MEALS = [
          <MealItem
             name={meal.name}
             title={meal.description}
-         price={ meal.price }
-         key={meal.id}
-         id={meal.id}
-      />
+            price={meal.price}
+            key={meal.id}
+            id={meal.id}
+         />
    ));
 
    return (
