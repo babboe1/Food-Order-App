@@ -39,7 +39,10 @@ const DUMMY_MEALS = [
             key={meal.id}
             id={meal.id}
          />
-   ));
+      ))
+   ) : (
+      <Spinner />
+   );
 
    return (
       <section className={classes.meals}>
