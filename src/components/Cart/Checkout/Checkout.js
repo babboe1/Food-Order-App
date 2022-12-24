@@ -17,6 +17,12 @@ const Checkout = (props) => {
    const postalRef = useRef();
    const cityRef = useRef();
 
+   const confirmHandler = (event) => {
+      event.preventDefault();
+      const enteredName = nameRef.current.value;
+      const enteredStreet = streetRef.current.value;
+      const enteredPostal = postalRef.current.value;
+      const enteredCity = cityRef.current.value;
 
 
 export default Checkout;
