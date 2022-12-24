@@ -12,6 +12,11 @@ const Checkout = (props) => {
       city: true,
    });
 
+   const nameRef = useRef();
+   const streetRef = useRef();
+   const postalRef = useRef();
+   const cityRef = useRef();
+
 
 
 export default Checkout;
