@@ -11,7 +11,27 @@ const AvailableMeals = () => {
       error: false,
       errorMsg: '',
    };
- 
+   const reducer = (state, action) => {
+      switch (action.type) {
+         case 'SET_MEALS':
+            return {
+               ...state,
+               meals: action.meals,
+            };
+         case 'SET_ERROR':
+            return {
+               ...state,
+               error: action.error,
+            };
+         case 'SET_ERROR_MSG':
+            return {
+               ...state,
+               errorMsg: action.errorMsg,
+            };
+         default:
+            return state;
+      }
+   };
 
 
    const mealsList = state.meals ? (
