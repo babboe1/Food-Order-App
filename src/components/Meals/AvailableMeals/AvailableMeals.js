@@ -32,6 +32,8 @@ const AvailableMeals = () => {
             return state;
       }
    };
+   const [state, dispatch] = useReducer(reducer, defaultMealState);
+
 
 
    const mealsList = state.meals ? (
