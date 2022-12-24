@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import { useEffect } from 'react';
 import Card from '../../UI/Card/Card';
+import Spinner from '../../UI/Spinner/Spinner';
 import MealItem from '../MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
 
