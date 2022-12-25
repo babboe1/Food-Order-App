@@ -24,5 +24,12 @@ const Checkout = (props) => {
       const enteredPostal = postalRef.current.value;
       const enteredCity = cityRef.current.value;
 
+      const formData = {
+         name: enteredName,
+         street: enteredStreet,
+         postal: enteredPostal,
+         city: enteredCity,
+      };
+
 
 export default Checkout;
