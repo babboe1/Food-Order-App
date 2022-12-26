@@ -31,5 +31,11 @@ const Checkout = (props) => {
          city: enteredCity,
       };
 
+      const enteredNameIsValid = !isEmpty(enteredName);
+      const enteredStreetIsValid = !isEmpty(enteredStreet);
+      const enteredPostalIsValid = isFiveChars(enteredPostal);
+      const enteredCityIsValid = !isEmpty(enteredCity);
+
+
 
 export default Checkout;
