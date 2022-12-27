@@ -36,6 +36,12 @@ const Checkout = (props) => {
       const enteredPostalIsValid = isFiveChars(enteredPostal);
       const enteredCityIsValid = !isEmpty(enteredCity);
 
+      setFormInputsValidity({
+         name: enteredNameIsValid,
+         street: enteredStreetIsValid,
+         postal: enteredPostalIsValid,
+         city: enteredCityIsValid,
+      });
 
 
 export default Checkout;
