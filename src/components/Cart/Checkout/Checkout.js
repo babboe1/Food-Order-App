@@ -43,5 +43,19 @@ const Checkout = (props) => {
          city: enteredCityIsValid,
       });
 
+      const formIsValid =
+         enteredNameIsValid &&
+         enteredStreetIsValid &&
+         enteredPostalIsValid &&
+         enteredCityIsValid;
+
+      if (!formIsValid) {
+         return;
+      }
+
+      props.onConfirm(formData);
+   };
+
+
 
 export default Checkout;
