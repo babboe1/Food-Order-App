@@ -34,7 +34,26 @@ const AvailableMeals = () => {
    };
    const [state, dispatch] = useReducer(reducer, defaultMealState);
 
-
+   useEffect(() => {
+      let mealData;
+      fetch(
+         'https://food-order-app-77b77-default-rtdb.firebaseio.com/meals.json',
+      )
+         .then((response) => response.json())
+         .then((data) => {
+            for (const key in data) {
+               if (Object.hasOwnProperty.call(data, key)) {
+                  mealData = data[key];
+               }
+               dispatch({ type: 'SET_MEALS', meals: mealData });
+            }
+         })
+         .catch((error) => {
+            console.log(error);
+            dispatch({ type: 'SET_ERROR', error: true });
+            dispatch({ type: 'SET_ERROR_MSG', errorMsg: error.message });
+         });
+   }, []);
 
    const mealsList = state.meals ? (
       state.meals.map((meal, idx) => (
