@@ -36,16 +36,14 @@ const AvailableMeals = () => {
 
    useEffect(() => {
       let mealData;
-      fetch(
-         'https://food-order-app-77b77-default-rtdb.firebaseio.com/meals.json',
-      )
+      fetch('https://reactmeals-1eb47-default-rtdb.firebaseio.com/meals.json')
          .then((response) => response.json())
          .then((data) => {
             for (const key in data) {
                if (Object.hasOwnProperty.call(data, key)) {
                   mealData = data[key];
                }
-               dispatch({ type: 'SET_MEALS', meals: mealData });
+               dispatch({ type: 'SET_MEALS', meals: mealData});
             }
          })
          .catch((error) => {
