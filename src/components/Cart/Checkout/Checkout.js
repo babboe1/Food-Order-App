@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import classes from './Checkout.module.css';
 
 const isEmpty = (value) => value.trim() === '';
-const isFiveChars = (value) => value.trim().length === 5;
+const isFiveChars = (value) => value.trim().length === 6;
 
 const Checkout = (props) => {
    const [formInputsValidity, setFormInputsValidity] = useState({
@@ -84,7 +84,7 @@ const Checkout = (props) => {
             <label htmlFor="postal">Postal Code</label>
             <input ref={postalRef} type="text" id="postal" />
             {!formInputsValidity.postal && (
-               <p>Please enter a valid postal code (5 characters long).</p>
+               <p>Please enter a valid postal code (6 characters long).</p>
             )}
          </div>
          <div
