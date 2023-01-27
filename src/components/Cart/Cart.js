@@ -44,7 +44,7 @@ const Cart = () => {
       // context.hideModalHandler();
       setPlaceOrder(true);
       fetch(
-         'https://food-order-app-77b77-default-rtdb.firebaseio.com/orders.json',
+         'https://reactmeals-1eb47-default-rtdb.firebaseio.com/orders.json',
          {
             method: 'POST',
             body: JSON.stringify({
